@@ -1,0 +1,166 @@
+.rateStructureContainer {
+  font-size: 28px;
+  padding-bottom: 50px;
+
+  /* 公共间距样式 */
+  .commonPadding {
+    padding: 26px;
+  }
+
+  /* 销售服务费率 */
+  .saleServeRate {
+    @extend .commonPadding;
+
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    color: #434343;
+
+    .title {
+      font-size: 32px;
+    }
+
+    .desc {
+      padding: 24px 0;
+      color: #999;
+    }
+
+    .subDesc {
+      display: flex;
+
+      .leftArea {
+        padding-top: 8px;
+        flex-basis: 145px;
+      }
+
+      .rightArea {
+        flex: 1;
+        line-height: 45px;
+        margin-left: 10px;
+        color: #999;
+      }
+    }
+
+  }
+
+  /* 表格模块样式 */
+  .tableBlock {
+    @extend .commonPadding;
+
+    padding-bottom: 40px;
+    margin-top: 20px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-size: 24px;
+
+    .title {
+      color: #434343;
+      font-size: 32px;
+    }
+
+    .table {
+      margin-top: 30px;
+      border: 1px solid #eee;
+
+      .tableHead {
+        .row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 84px;
+          line-height: 84px;
+          background: #f7f6f9;
+
+          .item {
+            flex: 1;
+            text-align: center;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            font-weight: 400;
+          }
+
+          .item:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      .tableContent {
+        :global {
+          .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 84px;
+            line-height: 84px;
+            border-bottom: 1px solid #eee;
+
+            .item {
+              flex: 1;
+              text-align: center;
+              color: #999;
+              border-right: 1px solid #eee;
+            }
+
+            .item:last-child {
+              border: 0;
+            }
+          }
+
+          .row:last-child {
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  /* 基金运作费 */
+  .fundOperationRate {
+    @extend .commonPadding;
+
+    margin-top: 20px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-size: 28px;
+
+    .title {
+      color: #434343;
+      font-size: 32px;
+    }
+
+    .descContainer {
+      .descItem {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .leftArea {
+          padding-top: 15px;
+          flex-basis: 150px;
+          width: 150px;
+          color: #424242;
+        }
+
+        .rightArea {
+          flex: 1;
+          line-height: 50px;
+          color: #999;
+        }
+      }
+
+      .descItem:first-child {
+        border-bottom: 1px solid #eee;
+      }
+
+      .descItem:last-child {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
