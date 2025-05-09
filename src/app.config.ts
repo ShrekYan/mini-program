@@ -11,5 +11,11 @@ export default defineAppConfig({
     navigationBarTitleText: "WeChat",
     navigationBarTextStyle: "black"
   },
-  __usePrivacyCheck__:true
+  requiredBackgroundModes:[],
+  //分包预下载规则
+  preloadRule:{},
+  debug: process.env.NODE_ENV === "development",
+  __usePrivacyCheck__:true,
+  entryPagePath:"pages/index/index",
+  style:"v2"
 })

@@ -8,8 +8,10 @@ import prodConfig from "./prod"
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
   console.log(command,mode);
+  //运行环境变量
+  console.log(process.env.TARO_ENV);
   const baseConfig: UserConfigExport<"webpack5"> = {
-    projectName: "mini-program10",
+    projectName: "mini-program",
     date: "2025-5-7",
     designWidth(input) {
       //类型守卫
@@ -55,7 +57,13 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
         pxtransform: {
           enable: true,
           config: {
-
+            onePxTransform: true,
+            unitPrecision: 5,
+            propList: ['*'],
+            selectorBlackList: [],
+            replace: true,
+            mediaQuery: false,
+            minPixelValue: 0
           }
         },
         cssModules: {
@@ -85,7 +93,18 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
       postcss: {
         autoprefixer: {
           enable: true,
-          config: {}
+          config: {
+            onePxTransform: false,
+            unitPrecision: 5,
+            propList: ['*'],
+            selectorBlackList: [],
+            replace: true,
+            mediaQuery: false,
+            minPixelValue: 0,
+            baseFontSize: 20,
+            maxRootSize: 40,
+            minRootSize: 20
+          }
         },
         cssModules: {
           enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
