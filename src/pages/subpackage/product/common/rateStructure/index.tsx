@@ -28,7 +28,6 @@ const Index =()=> {
             manageRatio,
             saleServiceRate
           } = store;
-          console.log(saleServiceRate);
           return (
             <View className={styles.rateStructureContainer}>
               {saleServiceRate && (

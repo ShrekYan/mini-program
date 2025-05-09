@@ -10,6 +10,11 @@
     "framework": "React"
   },
   "scripts": {
+    "dev-build:weapp": "taro build --type weapp --mode development",
+    "test-build:weapp": "taro build --type weapp --mode test",
+    "fofTest-build:weapp": "taro build --type weapp --mode fofTest",
+    "sit-build:weapp": "taro build --type weapp --mode sit",
+    "pre-build:weapp": "taro build --type weapp --mode pre",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
@@ -20,6 +25,10 @@
     "build:jd": "taro build --type jd",
     "build:harmony-hybrid": "taro build --type harmony-hybrid",
     "dev:weapp": "npm run build:weapp -- --watch",
+    "test-dev:weapp": "npm run build:weapp  -- --watch --mode test",
+    "fofTest-dev:weapp": "npm run build:weapp  -- --watch --mode fofTest",
+    "sit-dev:weapp": "npm run build:weapp  -- --watch --mode sit",
+    "pre-dev:weapp": "npm run build:weapp  -- --watch --mode pre",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",

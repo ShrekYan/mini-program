@@ -1,10 +1,18 @@
+### 重要事项
+* taro官网：https://github.com/jd-opensource/awesome-taro
+
 ### 未办事项
 * http网络框架
 * ui组件库
+  * 主题颜色
 * 图表库
 * 环境变量
 * 别名
 * 路由拦截功能
 * 微信小程序分包、授权
+  * 隐私协议：
+    * https://yuanbao.tencent.com/chat/naQivTmsDa/269ad27c-0294-4a35-874e-8e75015f464e
 * css module
 * webview
+  * 与h5交互
+* 上传cli

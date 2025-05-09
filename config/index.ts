@@ -28,6 +28,7 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
       375: 2,
       828: 1.81 / 2
     },
+    //todo 后续需要定义
     alias: {
       "@": path.resolve(__dirname, ".././src/"),
       "@api": path.resolve(__dirname, ".././src/api"),
@@ -36,6 +37,7 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
     outputRoot: "dist",
     plugins: [],
     defineConstants: {
+      API_URL:JSON.stringify(process.env.TARO_APP_URL)
     },
     copy: {
       patterns: [

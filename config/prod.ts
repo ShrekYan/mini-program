@@ -1,7 +1,19 @@
 import type { UserConfigExport } from "@tarojs/cli"
 
 export default {
-  mini: {},
+  mini: {
+    optimizeMainPackage: {
+      enable: true
+    },
+    miniCssExtractPluginOption:{
+      ignoreOrder:true
+    },
+    webpackChain (chain) {
+      chain.merge({
+        watchOptions: { ignored: /node_modules/},
+      });
+    },
+  },
   h5: {
     compile: {
       include: [

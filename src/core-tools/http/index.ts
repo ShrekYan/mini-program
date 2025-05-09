@@ -9,7 +9,7 @@ import networkError from "./httpPlug/networkError"
 // import {getServerUrl} from "@Src/config";
 
 //服务器url前缀
-const serverUrlPrefix = "https://mobile.qiangungun.com";
+const serverUrlPrefix = API_URL;
 
 const http = new httpEnhancer(serverUrlPrefix, "http://dev-yapi.gungunqian.cn:3000/mock/37");
 
