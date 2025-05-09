@@ -20,4 +20,5 @@
 * webview
   * 与h5交互
 * 上传cli
+* ci/cd (.husky)
 

@@ -1,5 +1,5 @@
 import {PropsWithChildren} from "react"
-import {useDidHide, useDidShow, useError, useLaunch, usePageNotFound, useUnhandledRejection} from "@tarojs/taro"
+import {useDidHide, useDidShow,useError, useLaunch, usePageNotFound, useUnhandledRejection} from "@tarojs/taro"
 import "./app.scss"
 
 function App({children}: PropsWithChildren<any>) {

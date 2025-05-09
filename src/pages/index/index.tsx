@@ -1,70 +1,33 @@
-import {
-  useDidHide,
-  useDidShow,
-  useLoad,
-  usePageScroll,
-  useReady,
-  useRouter,
-  useSaveExitState,
-  useShareAppMessage,
-  useUnload
-} from "@tarojs/taro"
-import {Text, View} from "@tarojs/components"
-import {useEffect} from "react"
-import "./index.scss"
+import { Component, useEffect, useState } from "react"
+import { View, Button } from "@tarojs/components"
+import { useDidShow, useDidHide, useShareAppMessage } from "@tarojs/taro"
+import createErrorBoundary from "@/components/hoc/createErrorBoundary";
 
-export default function Index() {
+function Index() {
+  const [counter, setCounter] = useState(0)
 
-  const router = useRouter();
+  useDidShow(() => console.log("show"))
 
-  console.log(router);
-  useLoad((options) => {
-    console.error("Page loaded.11");
-    console.log(options);
-  });
+  useDidHide(() => console.log("hide"))
 
-  useReady(() => {
+  useShareAppMessage(() => ({ title: "myShareTitle" }))
 
-  });
-
-  useDidHide(() => {
-    console.log("useDidHide");
-  });
-
-  useDidShow(() => {
-    console.log("useDidShow");
-  });
+  function handleClick() {
+    setCounter(counter + 1)
+  }
 
   useEffect(() => {
-    console.error("useEffect");
+    console.log(Component,View);
   }, []);
 
-  useUnload(() => {
-    console.log("useUnload");
-  });
-
-  usePageScroll(() => {
-    console.log("usePageScroll");
-  });
-
-  useShareAppMessage((res) => {
-    console.log(res);
-    return {
-      title: "",
-      path: ""
+  useEffect(() => {
+    if (counter === 2) {
+      // 模拟 JS 报错
+      throw new Error("I crashed!")
     }
-  });
+  })
 
-  useSaveExitState(() => {
-    return {
-      data: {},
-      expireTimeStamp: 10000
-    }
-  });
-
-  return (
-      <View className="index">
-        <Text>Hello world!</Text>
-      </View>
-  )
+  return <Button onClick={handleClick}>{counter}</Button>
 }
+
+export default createErrorBoundary(Index)
