@@ -29,6 +29,7 @@
     "fofTest-dev:weapp": "npm run build:weapp  -- --watch --mode fofTest",
     "sit-dev:weapp": "npm run build:weapp  -- --watch --mode sit",
     "pre-dev:weapp": "npm run build:weapp  -- --watch --mode pre",
+    "prd-dev:weapp": "npm run build:weapp  -- --watch --mode production",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",
