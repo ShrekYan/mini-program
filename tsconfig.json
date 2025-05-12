@@ -22,7 +22,14 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@api/*":["./src/api/*"]
+      "@api/*":["./src/api/*"],
+      "@business/*": ["./src/business/*"],
+      "@components/*": ["./src/components/*"],
+      "@core-tools/*": ["./src/core-tools/*"],
+      "@page/*": ["./src/pages/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@local-types/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": ["./src",

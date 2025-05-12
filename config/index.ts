@@ -30,10 +30,16 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
       375: 2,
       828: 1.81 / 2
     },
-    //todo 后续需要定义
     alias: {
       "@": path.resolve(__dirname, ".././src/"),
       "@api": path.resolve(__dirname, ".././src/api"),
+      "@business": path.resolve(__dirname, ".././src/business"),
+      "@components": path.resolve(__dirname, ".././src/components"),
+      "@core-tools": path.resolve(__dirname, ".././src/core-tools"),
+      "@page/*": path.resolve(__dirname, ".././src/pages"),
+      "@routes": path.resolve(__dirname, ".././src/routes"),
+      "@local-types": path.resolve(__dirname, ".././src/types"),
+      "@utils": path.resolve(__dirname, ".././src/utils")
     },
     sourceRoot: "src",
     outputRoot: "dist",
@@ -54,12 +60,18 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
     },
     mini: {
       postcss: {
+        url:{
+          enable:true, // 启用 postcss-url 插件
+          config:{
+            limit:10240  // 单位：字节（即 10KB）
+          }
+        },
         pxtransform: {
           enable: true,
           config: {
             onePxTransform: true,
             unitPrecision: 5,
-            propList: ['*'],
+            propList: ["*"],
             selectorBlackList: [],
             replace: true,
             mediaQuery: false,
@@ -96,7 +108,7 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
           config: {
             onePxTransform: false,
             unitPrecision: 5,
-            propList: ['*'],
+            propList: ["*"],
             selectorBlackList: [],
             replace: true,
             mediaQuery: false,

@@ -1,18 +1,20 @@
 import {useEffect} from "react"
+import {useRouter} from "@tarojs/taro"
 import {QueryProductRateResponse} from "@/types/responses/product/queryProductRate";
 import classnames from "classnames"
 import {View} from "@tarojs/components"
 import {Observer} from "mobx-react"
 import useStore from "./useStore"
-import styles from  "./index.module.scss";
+import styles from "./index.module.scss";
 import PurchaseRateRow from "./components/PurchaseRateRow/index"
 
-const Index =()=> {
+const Index = () => {
   const store = useStore();
-
+  const router = useRouter();
   useEffect(() => {
+    const {productId} = router?.params;
     store.queryProductRate({
-      productId: "622080"
+      productId: productId as string
     });
   }, []);
 
