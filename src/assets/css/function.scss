@@ -1,0 +1,23 @@
+
+
+/**
+.container {
+  width: calculate-width(100px, 2);
+}
+ */
+//计算宽度
+@function calculate-width($base-width,$multiplier) {
+  @return $base-width * $multiplier;
+}
+
+
+
+//动态类名
+@function dynamic-class($prefix,$suffix) {
+  @return #{ $prefix }-#{ $suffix }
+}
+
+//生成渐变
+@function generate-gradient($color1,$color2) {
+  @return linear-gradient(to right, $color1, $color2);
+}

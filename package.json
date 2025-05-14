@@ -72,11 +72,17 @@
     "@tarojs/taro": "4.0.12",
     "babel-plugin-import": "^1.13.8",
     "classnames": "^2.5.1",
+    "dayjs": "^1.11.13",
     "es-toolkit": "^1.37.2",
+    "fast-equals": "^5.2.2",
     "mobx": "^6.13.7",
     "mobx-react": "^9.2.0",
+    "numeral": "^2.0.6",
+    "p-limit": "^6.2.0",
+    "path-to-regexp": "^8.2.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
