@@ -1,4 +1,7 @@
 
+@function getImgUrl($imgUrl){
+  @return $bg-base+ $imgUrl;
+}
 
 /**
 .container {

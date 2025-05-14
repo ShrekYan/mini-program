@@ -1,6 +1,9 @@
 import type { UserConfigExport } from "@tarojs/cli"
 
 export default {
+  sass:{
+    data:`$bg-base: #{"https://dev-static.qiangungun.com/img/frodo/images"} !default;`
+  },
   mini: {
     optimizeMainPackage: {
       enable: true

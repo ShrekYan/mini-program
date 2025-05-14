@@ -1,4 +1,4 @@
-import { defineConfig, type UserConfigExport } from "@tarojs/cli"
+import {defineConfig, type UserConfigExport} from "@tarojs/cli"
 import path from "path";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin"
 import devConfig from "./dev"
@@ -6,8 +6,8 @@ import prodConfig from "./prod"
 
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
-export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
-  console.log(command,mode);
+export default defineConfig<"webpack5">(async (merge, {command, mode}) => {
+  console.log(command, mode);
   //运行环境变量
   console.log(process.env.TARO_ENV);
   const baseConfig: UserConfigExport<"webpack5"> = {
@@ -34,6 +34,8 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
       "@": path.resolve(__dirname, ".././src/"),
       "@api": path.resolve(__dirname, ".././src/api"),
       "@business": path.resolve(__dirname, ".././src/business"),
+      "@assets": path.resolve(__dirname, ".././src/assets"),
+      "@static": path.resolve(__dirname, ".././src/static"),
       "@components": path.resolve(__dirname, ".././src/components"),
       "@core-tools": path.resolve(__dirname, ".././src/core-tools"),
       "@page/*": path.resolve(__dirname, ".././src/pages"),
@@ -45,16 +47,23 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
     outputRoot: "dist",
     plugins: [],
     defineConstants: {
-      API_URL:JSON.stringify(process.env.TARO_APP_URL)
+      API_URL: JSON.stringify(process.env.TARO_APP_URL),
+      ENV_MODAL:JSON.stringify(process.env.NODE_ENV)
     },
     copy: {
-      patterns: [
-      ],
-      options: {
-      }
+      patterns: [],
+      options: {}
     },
     framework: "react",
     compiler: "webpack5",
+    jsMinimizer: "terser",
+    cssMinimizer: "csso",
+    terser: {
+      enable: true
+    },
+    csso: {
+      enable: true
+    },
     cache: {
       enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },
@@ -63,14 +72,18 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
         path.resolve(__dirname, "..", "src/assets/css/variables.scss"),
         path.resolve(__dirname, "..", "src/assets/css/mixin.scss"),
         path.resolve(__dirname, "..", "src/assets/css/function.scss")
-      ]
+      ],
+
     },
     mini: {
+      imageUrlLoaderOption: {
+        limit: 1024 * 10
+      },
       postcss: {
-        url:{
-          enable:true, // 启用 postcss-url 插件
-          config:{
-            limit:10240  // 单位：字节（即 10KB）
+        url: {
+          enable: true, // 启用 postcss-url 插件
+          config: {
+            limit: 1024 * 10
           }
         },
         pxtransform: {
@@ -144,6 +157,10 @@ export default defineConfig<"webpack5">(async (merge, { command, mode }) => {
           enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         }
       }
+    },
+    logger: {
+      quiet: true,
+      stats: true
     }
   }
 

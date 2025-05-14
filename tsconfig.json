@@ -23,6 +23,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@api/*":["./src/api/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@static/*": ["./src/static/*"],
       "@business/*": ["./src/business/*"],
       "@components/*": ["./src/components/*"],
       "@core-tools/*": ["./src/core-tools/*"],

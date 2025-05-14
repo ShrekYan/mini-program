@@ -1,11 +1,14 @@
-import React, { useEffect, useRef, useState} from "react"
-import {Button} from "@tarojs/components"
+import React, {useEffect, useRef, useState} from "react"
+import {Button, Image, View} from "@tarojs/components"
 import Taro, {useDidHide, useDidShow, useShareAppMessage} from "@tarojs/taro"
 import createErrorBoundary from "@/components/hoc/createErrorBoundary";
 import type {TaroElement} from "@tarojs/runtime";
+import useUrl from "@utils/url/useUrl"
+import styles from "./index.module.scss"
 
 function Index() {
   const [counter, setCounter] = useState(0);
+  const url = useUrl();
   const ref = useRef<TaroElement>();
 
   useDidShow(() => console.log("show"))
@@ -22,7 +25,6 @@ function Index() {
    * 跳转到费效率结构
    */
   function handleGotoRate() {
-    console.log("123");
     Taro.navigateTo({
       url: `/pages/subpackage/product/common/rateStructure/index?productId=${622080}`
     });
@@ -33,7 +35,7 @@ function Index() {
   }, []);
 
   useEffect(() => {
-    Taro.nextTick(()=>{
+    Taro.nextTick(() => {
       Taro.createSelectorQuery().select(`#${ref?.current?.sid}`)
         .boundingClientRect()
         .exec((res) => {
@@ -50,10 +52,15 @@ function Index() {
     }
   })
 
+
   return (
     <React.Fragment>
       <Button ref={ref} type="primary" onClick={handleGotoRate}>跳转到费率结构</Button>
       <Button onClick={handleClick}>{counter}</Button>
+      <Image src={url.getImagePath("/bg/bg-newFundImage.png")} />
+      <Image src={url.getImagePath("/bg/bg-idCard.png")} />
+      <View className={styles.testPic}></View>
+      <View className={styles.testPic1}></View>
     </React.Fragment>
   )
 }

@@ -28,5 +28,6 @@ declare namespace NodeJS {
 }
 
 declare const API_URL: string;
+declare const ENV_MODAL:string;
 
 
