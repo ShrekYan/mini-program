@@ -111,6 +111,9 @@ export default defineConfig<"webpack5">(async (merge, {command, mode}) => {
       }
     },
     h5: {
+      imageUrlLoaderOption:{
+        limit: 1024 * 10
+      },
       publicPath: "/",
       staticDirectory: "static",
       output: {
