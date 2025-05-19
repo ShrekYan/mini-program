@@ -21,6 +21,7 @@
     * 授权
     * 分享
       * webView share
+      * openType="share" 主动调用onShareAppMessage方法
       * ~~useShareAppMessage~~
     * ~~subpackage分包~~
     * 订阅
@@ -39,5 +40,5 @@
   ~~* 注入全局文件~~
 * ~~增加开发和生产环境引用图片资源方式保持统一的方法，实现的功能包括：image src的引用和 css 中的background url的引用~~
 ~~* 增加storage功能~~
-* 公用组件迁移
+* 公用组件迁移（后续发现）
 
