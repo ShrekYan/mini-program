@@ -5,6 +5,7 @@ import createErrorBoundary from "@/components/hoc/createErrorBoundary";
 import type {TaroElement} from "@tarojs/runtime";
 import useUrl from "@utils/url/useUrl"
 import styles from "./index.module.scss"
+import Chart from "./components/Chart/index"
 
 function Index() {
   const [counter, setCounter] = useState(0);
@@ -55,6 +56,8 @@ function Index() {
 
   return (
     <React.Fragment>
+      <Chart canvasId="test1" />
+      <Chart canvasId="test2" />
       <Button ref={ref} type="primary" onClick={handleGotoRate}>跳转到费率结构</Button>
       <Button onClick={handleClick}>{counter}</Button>
       <Image src={url.getImagePath("/bg/bg-newFundImage.png")} />
