@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react"
-import {Button, Image, View} from "@tarojs/components"
+import {Button, Image, View,Text} from "@tarojs/components"
 import Taro, {useDidHide, useDidShow, useShareAppMessage} from "@tarojs/taro"
 import createErrorBoundary from "@/components/hoc/createErrorBoundary";
 import type {TaroElement} from "@tarojs/runtime";
@@ -56,6 +56,8 @@ function Index() {
 
   return (
     <React.Fragment>
+      <div>icon-jisuanqi-1</div>
+      <Text className="iconfont icon-jisuanqi-1"></Text>
       <Chart canvasId="test1" />
       <Chart canvasId="test2" />
       <Button ref={ref} type="primary" onClick={handleGotoRate}>跳转到费率结构</Button>
