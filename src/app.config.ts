@@ -2,7 +2,8 @@ import routes from "./routes/index"
 
 export default defineAppConfig({
   pages: [
-    "pages/index/index"
+    "pages/Home/index",
+    "pages/WebView/index"
   ],
   subpackages:routes,
   window: {
@@ -16,6 +17,6 @@ export default defineAppConfig({
   preloadRule:{},
   debug: process.env.NODE_ENV === "development",
   __usePrivacyCheck__:true,
-  entryPagePath:"pages/index/index",
+  entryPagePath:"pages/Home/index",
   style:"v2"
 })

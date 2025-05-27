@@ -1,13 +1,13 @@
 export default {
   root:"pages/subpackage/product",
   pages:[
-    "common/rateStructure/index", //费率结构页面
+    "common/RateStructure/index", //费率结构页面
   ],
   shareConfigList:[
     {
-      path:"common/rateStructure/index",
+      path:"common/RateStructure/index",
       shareInfo:{
-        path: "/pages/subpackage/product/common/rateStructure/index",
+        path: "/pages/subpackage/product/common/RateStructure/index",
         title: "投顾同行人"
       }
     }

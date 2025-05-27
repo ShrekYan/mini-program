@@ -7,6 +7,7 @@ import useInterceptor from "@utils/router/useInterceptor"
 import usePageEnterAndLeave from "@utils/router/usePageEnterAndLeave"
 import useShareInfo from "@utils/router/useShareInfo"
 import  "@utils/router/routeInfo"
+import  "@/assets/font/iconfont.scss"
 import "./app.scss"
 
 function App({children}: PropsWithChildren<any>) {

@@ -3,13 +3,19 @@ import {Button, Image, View,Text} from "@tarojs/components"
 import Taro, {useDidHide, useDidShow, useShareAppMessage} from "@tarojs/taro"
 import createErrorBoundary from "@/components/hoc/createErrorBoundary";
 import type {TaroElement} from "@tarojs/runtime";
+import {compile} from "path-to-regexp"
 import useUrl from "@utils/url/useUrl"
+import {PageEnum} from "@utils/constants/enum.page";
+import useWebView from "@utils/webview/useWebView"
 import styles from "./index.module.scss"
 import Chart from "./components/Chart/index"
+
+
 
 function Index() {
   const [counter, setCounter] = useState(0);
   const url = useUrl();
+  const webview = useWebView();
   const ref = useRef<TaroElement>();
 
   useDidShow(() => console.log("show"))
@@ -27,7 +33,7 @@ function Index() {
    */
   function handleGotoRate() {
     Taro.navigateTo({
-      url: `/pages/subpackage/product/common/rateStructure/index?productId=${622080}`
+      url: `/pages/subpackage/product/common/RateStructure/index?productId=${622080}`
     });
   }
 
@@ -56,6 +62,12 @@ function Index() {
 
   return (
     <React.Fragment>
+      <Button type="primary" onClick={()=>{
+       //  PageEnum.productRateStructure
+        //开启webView
+        webview.openWebView(compile(PageEnum.productRateStructure)({productId:"622080"}));
+      }}
+      >跳转到webView页面</Button>
       <div>icon-jisuanqi-1</div>
       <Text className="iconfont icon-jisuanqi-1"></Text>
       <Chart canvasId="test1" />

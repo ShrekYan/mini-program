@@ -3,12 +3,12 @@
   * 寻找好用的组件库
 * taro物料库
   * https://taro-ext.jd.com/
+  * https://nutui.jd.com/#/
 
 ### 未办事项
 ~~* http网络框架~~
 * ui组件库
   * 主题颜色
-* 图表库
 ~~* 环境变量~~
 ~~* 别名~~
 ~~* 全局性功能~~
@@ -34,7 +34,9 @@
       * requestSubscribeMessage
 ~~* css module~~
 * webview
-  * 与h5交互
+  * 与h5交互 
+  * 分享
+* 四个Tabs
 * 上传cli
 * ci/cd (.husky)
 * 添加第三方组件库

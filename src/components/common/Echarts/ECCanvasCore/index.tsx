@@ -15,7 +15,7 @@ const EChart = React.forwardRef(({ canvasId }, ref) => {
    */
   const refresh = (option) => {
     if (!option) return;
-    canvasRef.current.init((canvas, width, height, dpr) => {
+    canvasRef?.current.init((canvas, width, height, dpr) => {
       const chart = echarts.init(canvas, null, {
         width: width,
         height: height,

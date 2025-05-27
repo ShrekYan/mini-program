@@ -10,6 +10,7 @@ export default defineConfig<"webpack5">(async (merge, {command, mode}) => {
   console.log(command, mode);
   //运行环境变量
   console.log(process.env.TARO_ENV);
+  console.log(process.env.TARO_APP_DO_MAIN);
   const baseConfig: UserConfigExport<"webpack5"> = {
     projectName: "mini-program",
     date: "2025-5-7",
@@ -48,7 +49,9 @@ export default defineConfig<"webpack5">(async (merge, {command, mode}) => {
     plugins: [],
     defineConstants: {
       API_URL: JSON.stringify(process.env.TARO_APP_URL),
-      ENV_MODAL:JSON.stringify(process.env.NODE_ENV)
+      ENV_MODAL:JSON.stringify(process.env.NODE_ENV),
+      MODAL:JSON.stringify(mode),
+      TARO_APP_DO_MAIN:JSON.stringify(process.env.TARO_APP_DO_MAIN),
     },
     copy: {
       patterns: [],
@@ -72,8 +75,7 @@ export default defineConfig<"webpack5">(async (merge, {command, mode}) => {
         path.resolve(__dirname, "..", "src/assets/css/variables.scss"),
         path.resolve(__dirname, "..", "src/assets/css/mixin.scss"),
         path.resolve(__dirname, "..", "src/assets/css/function.scss")
-      ],
-
+      ]
     },
     mini: {
       imageUrlLoaderOption: {

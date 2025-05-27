@@ -28,5 +28,7 @@ declare namespace NodeJS {
 }
 declare const API_URL: string;
 declare const ENV_MODAL: string;
+declare const MODAL: string;
+declare const TARO_APP_DO_MAIN: string;
 
 

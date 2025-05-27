@@ -3,7 +3,7 @@ import {useEffect} from "react"
 import {listenRoute} from "./router"
 
 const authConfig: Record<string, string | string[]> = {
-  product: ["pages/subpackage/product/common/rateStructure/index"]
+  product: ["pages/subpackage/product/common/RateStructure/index"]
 };
 
 const ignoreConfig = {
