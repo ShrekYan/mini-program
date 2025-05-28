@@ -54,7 +54,13 @@ export default defineConfig<"webpack5">(async (merge, {command, mode}) => {
       TARO_APP_DO_MAIN:JSON.stringify(process.env.TARO_APP_DO_MAIN),
     },
     copy: {
-      patterns: [],
+      patterns: [
+        {
+          //原生小程序组件
+          from:  path.resolve(__dirname,".././src/components/wx-source-code"),
+          to: path.resolve(__dirname,".././dist/components/wx-source-code"),
+        }
+      ],
       options: {}
     },
     framework: "react",

@@ -1,0 +1,10 @@
+export default {
+  navigationBarTitleText: '登录',
+  usingComponents: {
+    "aj-captcha": "@OutComponents/aj-captcha/index"
+  }
+}
+
+ {
+       showCodeVerifyModal && <CodeSlider visible onCheck={sendSmsCodeClick} onClose={closeVerifyModal}/>
+ }

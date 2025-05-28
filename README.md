@@ -33,9 +33,9 @@
     ~~* 订阅~~
       * requestSubscribeMessage
 ~~* css module~~
-* webview
-  * 与h5交互 
-  * 分享
+* ~~webview~~
+  * ~~与h5交互~~ 
+  * ~~分享~~
 * 四个Tabs
 * 上传cli
 * ci/cd (.husky)
@@ -44,6 +44,8 @@
   * 海报
   * 慧眼实名核身组件
   * 左右上下滚动组件
+  * ~~滑块验证码~~
+    * https://gitee.com/anji-plus/captcha
   ~~* 表单（UI库已提供）~~
 ~~* sass~~
   ~~* 注入全局文件~~

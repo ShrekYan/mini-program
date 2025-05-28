@@ -3,7 +3,6 @@ import {Button, Image, View,Text} from "@tarojs/components"
 import Taro, {useDidHide, useDidShow, useShareAppMessage} from "@tarojs/taro"
 import createErrorBoundary from "@/components/hoc/createErrorBoundary";
 import type {TaroElement} from "@tarojs/runtime";
-import {compile} from "path-to-regexp"
 import useUrl from "@utils/url/useUrl"
 import {PageEnum} from "@utils/constants/enum.page";
 import useWebView from "@utils/webview/useWebView"
@@ -63,9 +62,9 @@ function Index() {
   return (
     <React.Fragment>
       <Button type="primary" onClick={()=>{
-       //  PageEnum.productRateStructure
+        // PageEnum.productRateStructure
         //开启webView
-        webview.openWebView(compile(PageEnum.productRateStructure)({productId:"622080"}));
+        webview.openWebViewByCompile(PageEnum.productRateStructure,{productId:"622080"});
       }}
       >跳转到webView页面</Button>
       <div>icon-jisuanqi-1</div>

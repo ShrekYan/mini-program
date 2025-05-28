@@ -1,4 +1,5 @@
 import Taro from "@tarojs/taro";
+import {compile} from "path-to-regexp"
 import {useCallback} from "react"
 import useUrl from "../url/useUrl"
 
@@ -19,8 +20,20 @@ const useWebView = () => {
     });
   }, []);
 
+  /**
+   * 编译路径后开启webView
+   * /product/rateStructure/:productId
+   * @param path
+   * @param params
+   */
+  const openWebViewByCompile = useCallback((path: string, params: Record<string, string>) => {
+    const _path = compile(path)(params);
+    openWebView(_path);
+  }, []);
+
   return {
-    openWebView
+    openWebView,
+    openWebViewByCompile
   }
 };
 
