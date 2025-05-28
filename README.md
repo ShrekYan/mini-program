@@ -41,8 +41,10 @@
 * ci/cd (.husky)
 * 添加第三方组件库
   ~~* 图表~~
-  * 海报
-  * 慧眼实名核身组件
+  ~~* 海报~~
+    * https://www.npmjs.com/package/taro-plugin-canvas
+  * 调用腾讯慧眼人脸核身
+    * https://cloud.tencent.com/product/faceid
   * 左右上下滚动组件
   * ~~滑块验证码~~
     * https://gitee.com/anji-plus/captcha
