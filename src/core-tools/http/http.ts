@@ -1,6 +1,7 @@
 import httpCore from "./httpCore"
 import httpFnStore from "./httpFnStore"
 import httpFlow from "./httpFlow"
+import type {PluginFunction}  from "./httpFnStore"
 
 /**
  * http options参数
@@ -85,7 +86,7 @@ class Http implements IHttp {
    * addBeforeFn
    * @param fn
    */
-  addBeforeFn(fn: Function) {
+  addBeforeFn(fn: PluginFunction) {
     httpFnStore.addBeforeFn(fn);
   };
 
@@ -93,7 +94,7 @@ class Http implements IHttp {
    * addAfterFn
    * @param fn
    */
-  addAfterFn(fn: Function) {
+  addAfterFn(fn: PluginFunction) {
     httpFnStore.addAfterFn(fn);
   };
 
@@ -101,7 +102,7 @@ class Http implements IHttp {
    * addErrorFn
    * @param fn
    */
-  addErrorFn(fn: Function) {
+  addErrorFn(fn: PluginFunction) {
     httpFnStore.addErrorFn(fn);
   };
 
@@ -109,7 +110,7 @@ class Http implements IHttp {
    * addFinallyFn
    * @param fn
    */
-  addFinallyFn(fn: Function) {
+  addFinallyFn(fn: PluginFunction) {
     httpFnStore.addFinallyFn(fn);
   };
 

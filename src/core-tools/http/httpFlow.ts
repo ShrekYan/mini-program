@@ -1,6 +1,7 @@
 import Taro from "@tarojs/taro"
 import type {IOptions} from "./http";
 import httpFnStore from "./httpFnStore"
+import type {PluginFunction}  from "./httpFnStore"
 
 /**
  * http执行前发送的方法
@@ -9,9 +10,9 @@ import httpFnStore from "./httpFnStore"
  * @param options
  * @param beforeFnList
  */
-function beforeMethod<KParams, TResponse>(url: string, data: KParams, options: IOptions, beforeFnList: Function[]): Promise<TResponse | boolean> {
+function beforeMethod<KParams, TResponse>(url: string, data: KParams, options: IOptions, beforeFnList: PluginFunction[]): Promise<TResponse | boolean> {
   return new Promise((resolve) => {
-    beforeFnList.map((fn: Function) => {
+    beforeFnList.map((fn: PluginFunction) => {
       fn({url, data, options});
     });
     resolve(true);
@@ -26,7 +27,7 @@ function beforeMethod<KParams, TResponse>(url: string, data: KParams, options: I
  * @param resp
  * @param finallyFnList
  */
-function finallyMethod<KParams, TResponse>(url: string, data: KParams, options: IOptions, resp: TResponse, finallyFnList: Function[]): void {
+function finallyMethod<KParams, TResponse>(url: string, data: KParams, options: IOptions, resp: TResponse, finallyFnList: PluginFunction[]): void {
   finallyFnList.map((fn) => {
     fn({url, data, options, resp});
   });
@@ -39,7 +40,7 @@ function finallyMethod<KParams, TResponse>(url: string, data: KParams, options: 
  * @param options
  * @param httpFn
  */
-function httpFlow<KParams, TResponse>(url: string, data: KParams, options: IOptions, httpFn: Function): Promise<TResponse> {
+function httpFlow<KParams, TResponse>(url: string, data: KParams, options: IOptions, httpFn: PluginFunction): Promise<TResponse> {
   const beforeFnList = httpFnStore.getBeforeFn();
   const afterFnList = httpFnStore.getAfterFn();
   const finallyFnList = httpFnStore.getFinallyFn();

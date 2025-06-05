@@ -1,4 +1,5 @@
 import http from "./http"
+import type {PluginFunction}  from "./httpFnStore"
 
 /**
  * 增强的http
@@ -8,22 +9,22 @@ export default class httpEnhancer extends http {
     super(urlPrefix, mockUrlPrefix);
   }
 
-  addBeforePlug = (plug: Function) => {
+  addBeforePlug = (plug: PluginFunction) => {
     this.addBeforeFn(plug);
     return this;
   };
 
-  addAfterPlug = (plug: Function) => {
+  addAfterPlug = (plug: PluginFunction) => {
     this.addAfterFn(plug);
     return this;
   };
 
-  addErrorPlug = (plug: Function) => {
+  addErrorPlug = (plug: PluginFunction) => {
     this.addErrorFn(plug);
     return this;
   };
 
-  addFinallyPlug = (plug: Function) => {
+  addFinallyPlug = (plug: PluginFunction) => {
     this.addFinallyFn(plug);
     return this;
   };
